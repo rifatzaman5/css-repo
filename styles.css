@@ -1,0 +1,254 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  font-family: Rubik, Regular;
+}
+
+.container-fluid,
+.row {
+  height: 100%;
+}
+
+.sidebar {
+  background-image: url("./sidebar.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 31.66667%; /* This is equivalent to col-lg-5 */
+  color: white;
+}
+
+.sidebar-content {
+  text-align: left;
+  padding-left: 15px;
+  line-height: 1.5;
+}
+.sidebar-content h2 {
+  font-size: 3rem;
+  margin-top: 0px;
+}
+.sidebar-content h4 {
+  margin-top: 1.5rem;
+  margin-bottom: 2px !important;
+}
+.sidebar h1 {
+  font-size: 4rem;
+  font-weight: bold;
+}
+h4 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+.main-content {
+  padding-right: 30px;
+  margin-left: 31.66667%;
+  height: 100%;
+  overflow-y: auto;
+  background: linear-gradient(to right, #e6f2ff, #e6ffe6);
+  padding: 2rem;
+}
+
+.form-container {
+  width: 68%;
+  background-color: rgba(255, 255, 255, 0.575);
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 0 10px rgba(104, 104, 104, 0.1);
+  margin-bottom: 2rem;
+}
+
+.header {
+  width: 68%;
+}
+
+
+.form-control {
+  border-radius: 12px !important;
+  display: block;
+  width: 100%;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.back-link {
+  color: #333;
+  text-decoration: none;
+  border: 1px solid #6d6d6d9f;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+.progress-bar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.progress-bar-container::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: repeating-linear-gradient(
+    to right,
+    #e0e0e0 0,
+    #e0e0e0 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  z-index: 0;
+}
+
+.progress-step {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+
+  background-color: rgba(255, 255, 255, 0.815);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
+  border: 2px solid rgba(255, 255, 255, 0.527);
+  color: #000;
+  position: relative;
+  z-index: 1;
+}
+.progress-step.completed {
+  background-color: #28a745;
+  color: white;
+}
+
+.progress-step.completed::after {
+  content: "\f00c"; 
+  font-family: "Font Awesome 5 Free";
+  font-weight: 700;
+  font-size: 10px;
+  position: absolute;
+  background-color: #28a745;
+}
+.progress-step.active {
+  background-color: white;
+  border: 2px solid black;
+  position: relative;
+}
+
+.progress-step.active::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.form-label {
+  font-weight: 200;
+}
+
+.imageinput {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 49%;
+}
+
+.imageinput-text {
+  background-color: white !important;
+}
+
+.form-control,
+.form-select {
+  border-radius: 5px;
+}
+
+.btn-dark {
+  border-radius: 5px;
+}
+
+h4 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+h3 {
+  margin-bottom: 1rem;
+}
+
+.input-group .btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .sidebar {
+    display: none;
+  }
+  .main-content {
+    margin-left: 0;
+    padding: 1rem;
+  }
+  .form-container,
+  .header {
+    width: 100%;
+  }
+  .progress-step {
+    width: 20px;
+    height: 20px;
+    font-size: 0.7rem;
+  }
+  .sidebar h1,
+  .sidebar h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .progress-bar-container {
+    flex-direction: row;
+  }
+  .imageinput {
+    width: 100%;
+  }
+  .progress-step {
+    margin-bottom: 0.5rem;
+  }
+  .progress-bar-container::before {
+    width: 2px;
+    height: calc(100% - 24px);
+    left: 50%;
+    top: 12px;
+    background: repeating-linear-gradient(
+      to bottom,
+      #e0e0e0 0,
+      #e0e0e0 2px,
+      transparent 2px,
+      transparent 4px
+    );
+  }
+}
